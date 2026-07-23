@@ -17,10 +17,12 @@ jobs:
       - name: Install Rust Toolchain
         uses: dtolnay/rust-toolchain@master
         with:
-          toolchain: nightly-2024-04-15
+          toolchain: nightly
           targets: aarch64-apple-ios
 
       - name: Build Project (Release)
+        env:
+          RUSTC_BOOTSTRAP: 1
         run: cargo build --release --target aarch64-apple-ios
 
       - name: Upload Artifact
