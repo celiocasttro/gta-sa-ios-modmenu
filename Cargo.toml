@@ -1,0 +1,46 @@
+[package]
+name = "cleo"
+version = "2.6.0"
+authors = ["squ1dd13 <squ1dd13dev@gmail.com>"]
+edition = "2021"
+description = "CLEO SA for iOS"
+publish = false
+
+[lib]
+name = "cleo"
+crate-type = ["staticlib"]
+
+[features]
+debug = []
+
+[patch.crates-io]
+# The fork fixes a bug that prevents building for iOS.
+dobby-sys = { git = "https://github.com/squ1dd13/dobby-sys" }
+
+[dependencies]
+bincode = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+ctor = "0.1.20"
+chrono = "0.4"
+dlopen = "0.1"
+cached = "0.23"
+backtrace = "0.3"
+objc = { git = "https://github.com/squ1dd13/rust-objc" }
+log = "0.4"
+lazy_static = "1.4.0"
+regex = "1.5.3"
+libc = "0.2.97"
+reqwest = { version = "0.11.3", features = ["blocking"] }
+serde_json = "1.0"
+dispatch = "0.2.0"
+byteorder = "1.4.3"
+once_cell = "1.8.0"
+eyre = "0.6.5"
+itertools = "0.10.5"
+case_insensitive_hashmap = "1.0.0"
+strum = { version = "0.24", features = ["derive"] }
+fluent = { git = "https://github.com/squ1dd13/fluent-rs" }
+fluent-bundle = { git = "https://github.com/squ1dd13/fluent-rs" }
+unic-langid = { version = "0.9.1", features = ["macros"] }
+vector2d = "2.2.0"
+hlhook = { git = "https://github.com/squ1dd13/hlhook" }
